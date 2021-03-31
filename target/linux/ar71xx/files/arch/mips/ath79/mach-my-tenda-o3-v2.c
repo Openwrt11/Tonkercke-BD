@@ -1,5 +1,6 @@
 /*
  * MAKE TENDA-O3-V2 Board
+ * -  TENDA-O3-V2 (QCA9531)
  *
  * Copyright (c) 2013-2015 The Linux Foundation. All rights reserved.
  * Copyright (c) 2012 Gabor Juhos <juhosg@openwrt.org>
@@ -60,7 +61,7 @@ static struct gpio_keys_button tenda-o3_gpio_keys[] __initdata = {
 	},
 };
 
-static struct gpio_led TENDA-O3_leds_gpio[] __initdata = {
+static struct gpio_led tenda-o3_leds_gpio[] __initdata = {
 
 	{
 		.name		= "tenda-o3-v2:green:lan1",
@@ -89,7 +90,7 @@ static struct gpio_led TENDA-O3_leds_gpio[] __initdata = {
 	},  
 };
 
-static void __init TENDA-O3_gpio_led_setup(void)
+static void __init tenda-o3_gpio_led_setup(void)
 {
 	ath79_gpio_direction_select(TENDA-O3_GPIO_GPIO_LED_LAN1, true);
 	ath79_gpio_direction_select(TENDA-O3_GPIO_GPIO_LED_WLAN, true);
@@ -123,7 +124,7 @@ static void __init tenda-o3_setup(void)
 	/* Disable JTAG (enables GPIO0-3) */
 	ath79_gpio_function_enable(AR934X_GPIO_FUNC_JTAG_DISABLE);
 
-	ath79_register_gpio_keys_polled(-1, TENDA-O3_KEYS_POLL_INTERVAL,
+	ath79_register_gpio_keys_polled(-1, tenda-o3_KEYS_POLL_INTERVAL,
 			ARRAY_SIZE(tenda-o3_gpio_keys),
 			tenda-o3_gpio_keys);
 
@@ -156,4 +157,4 @@ static void __init tenda-o3_setup(void)
 	ath79_register_eth(1);
 }
 
-MIPS_MACHINE(ATH79_MACH_TENDA-O3-V2, "TENDA-O3-V2", "MAKE TENDA-O3-V2",tenda-o3_v2_setup);
+MIPS_MACHINE(ATH79_MACH_TENDA_O3_V2, "TENDA-O3-V2", "MAKE TENDA-O3-V2",tenda_o3_v2_setup);
