@@ -31,4 +31,4 @@ sudo apt install build-essential libncursesw5-dev python unzip
 9 make menuconfig
 
 10 make V=99
-
+  
